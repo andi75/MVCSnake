@@ -1,5 +1,4 @@
 import java.awt.Dimension;
-import java.awt.RenderingHints.Key;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -39,7 +38,7 @@ public class SnakeViewcontroller implements KeyListener, Runnable {
 			
 			if(!model.tick())
 			{
-				System.out.println("Crashed at length" + model.snake.size());
+				System.out.println("Crashed at length " + model.snake.size());
 				break;
 			}
 			view.repaint();
@@ -68,7 +67,7 @@ public class SnakeViewcontroller implements KeyListener, Runnable {
 		case KeyEvent.VK_LEFT: model.move(SnakeModel.LEFT); break;
 		case KeyEvent.VK_RIGHT: model.move(SnakeModel.RIGHT); break;
 		}
-		System.out.println(e);
+//		System.out.println(e);
 	}
 
 	@Override

@@ -3,6 +3,7 @@ import java.awt.Graphics;
 
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public class GridView extends JPanel {
 	Grid grid;
 	
@@ -20,6 +21,7 @@ public class GridView extends JPanel {
 	@Override
 	public void paintComponent(Graphics g)
 	{
+		super.paintComponent(g);
 		int squareOffset = 1;
 		int squareWidth = getWidth() / grid.width - squareOffset;
 		int squareHeight = getHeight() / grid.height - squareOffset;
@@ -35,7 +37,7 @@ public class GridView extends JPanel {
 				int y = squareOffset + sy * (squareHeight + squareOffset);
 				g.setColor( colors[ grid.get(sx, sy) ] );
 				g.fillRect(x, getHeight() - y - squareHeight, squareWidth, squareHeight);
-				if(grid.get(sx, sy) == 1)
+				if(grid.get(sx, sy) != 0)
 				{
 					g.setColor( Color.black );
 					g.drawRect(x - 1, getHeight() - y - squareHeight - 1, squareWidth + 1, squareHeight + 1);

@@ -49,8 +49,8 @@ public class SnakeModel {
 		snake = new LinkedList<GridPos>();
 		
 		// don't put the snake too close to the border
-		int snake_x = (int) ( (0.2 + Math.random() * 0.6) * width);
-		int snake_y = (int) ( (0.2 + Math.random() * 0.6) * height);
+		int snake_x = (int) ( (0.3 + Math.random() * 0.2) * width);
+		int snake_y = (int) ( (0.3 + Math.random() * 0.2) * height);
 
 		
 		GridPos head = new GridPos( snake_x, snake_y );
